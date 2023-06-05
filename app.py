@@ -12,11 +12,7 @@ from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
 import os
 
-# OpenAI APIキーを環境変数から取得
-api_key = os.environ['OPENAI_KEY']
-
-# OpenAI APIの初期化（仮定）
-openai.Api(api_key)
+openai.api_key = st.secrets.OpenAIAPI.openai_api_key
 
 
 def get_pdf_text(pdf_docs):
